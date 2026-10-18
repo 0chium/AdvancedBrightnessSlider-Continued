@@ -1,0 +1,14 @@
+Package: com.ochium.advancedbrightnessslider
+Name: AdvancedBrightnessSlider Continued
+Version: 1.2.1+0chium.1
+Architecture: iphoneos-arm
+Description: Independently maintained compatibility fork of Jonas Schiefner's AdvancedBrightnessSlider
+Maintainer: 0chium
+Author: Jonas Schiefner
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.common (>= 1.17)
+Conflicts: com.jschiefner.advancedbrightnessslider
+Replaces: com.jschiefner.advancedbrightnessslider
+Homepage: https://github.com/0chium/AdvancedBrightnessSlider-Continued
+Depiction: https://0chium.github.io/depictions/advancedbrightnessslider.html
+Icon: https://0chium.github.io/assets/advancedbrightnessslider.png

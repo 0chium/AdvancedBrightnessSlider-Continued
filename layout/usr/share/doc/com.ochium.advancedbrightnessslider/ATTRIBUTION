@@ -1,0 +1,35 @@
+AdvancedBrightnessSlider Continued 1.2.1+0chium.1
+
+An independently maintained compatibility fork of Jonas Schiefner's
+AdvancedBrightnessSlider, maintained by 0chium (leading digit zero).
+Original author: Jonas Schiefner. Original copyright notices are preserved.
+Original source: https://github.com/jschiefner/advanced-brightness-slider-tweak
+Upstream baseline: 6d77a742b859603c7b8763df126faad1dc4d485a (1.2.1).
+
+Original credits retained:
+- opa334 / WhitePointModule: Reduce White Point API reference.
+  https://github.com/opa334/WhitePointModule
+- rpetrich / Flipswitch: Auto-Brightness API reference.
+  https://github.com/a3tweaks/Flipswitch
+- PoomSmart: upstream iOS 15 compatibility.
+  https://github.com/PoomSmart
+- zaneh: iOS tweak development video series.
+  https://www.youtube.com/playlist?list=PLFWEDfSyl7h_K8Ew4rwTzlUPgWU7nKYri
+
+Compatibility work by 0chium: scoped native controller adapter, existing
+preference/state integration and exact-build gates. This release changes
+package identity, presentation, documentation and replacement relationships;
+it preserves the accepted compatibility implementation and internal names.
+No upstream endorsement is implied.
+
+License: GNU General Public License, version 3. Full text is in COPYING.
+Support the original developer: https://paypal.me/JonasSchiefner
+This destination belongs to Jonas Schiefner and is not redirected to 0chium.
+
+Maintained fork source:
+https://github.com/0chium/AdvancedBrightnessSlider-Continued
+Fork support:
+https://github.com/0chium/AdvancedBrightnessSlider-Continued/issues
+Package repository: https://0chium.github.io/
+See README.md and CHANGELOG.md in the matching source for exact-build
+compatibility, meaningful implementation changes and validation limits.

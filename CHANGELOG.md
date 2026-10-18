@@ -1,5 +1,16 @@
 # Changes from AdvancedBrightnessSlider 1.2.1
 
+## 1.2.2-1
+
+- Metadata-only Debian version update from 1.2.1+0chium.1; dpkg confirms the
+  new version sorts strictly higher, allowing a normal same-package upgrade.
+- Reused the accepted data archive verbatim. Executables, signatures and every
+  installed resource remain byte-identical. Only the control Version field
+  changed inside the package; no compilation or functional source change.
+- Preserved original authorship/GPL-3.0, preference storage, dependencies,
+  Conflicts/Replaces, exact-build guards, compatibility evidence and limitations.
+- Retained the older ABS package and all existing Lantern releases/entries.
+
 ## 1.2.1+0chium.1
 
 - Independently maintained by 0chium; original authorship remains Jonas Schiefner.

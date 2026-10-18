@@ -1,5 +1,19 @@
 # Identified release build inputs
 
+## 1.2.2-1 metadata packaging
+
+The published 1.2.2-1 package was not compiled. Its control archive changes only
+the Version field from 1.2.1+0chium.1 to 1.2.2-1; the complete accepted data
+archive and other Debian archive members are reused verbatim. All installed
+file bytes, signatures and metadata therefore remain unchanged. The packaged
+attribution heading retains the payload's original version intentionally.
+Debian dpkg 1.22.6 confirmed that the new version is strictly newer.
+
+The commands and toolchain below describe the original accepted payload build,
+not a new 1.2.2-1 compilation. Recompiling is not the metadata-only release recipe.
+
+## Original 1.2.1+0chium.1 payload build
+
 The release was prepared from Windows using a GitHub-hosted **macos-15** job.
 Commands below run on that macOS builder, not on Windows. No local Mac or
 device-derived build helper is required. This source snapshot includes the

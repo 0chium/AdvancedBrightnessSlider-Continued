@@ -1,13 +1,18 @@
 {
   "name": "AdvancedBrightnessSlider Continued",
   "package": "com.ochium.advancedbrightnessslider",
-  "version": "1.2.1+0chium.1",
-  "package_sha256": "0c3e82842758ac54400502c55bdb364face35308fda3d9a901347e7b3c8f2d81",
-  "source_manifest_sha256": "59618e3bc3777620f30757ac5179e957cc421cfe1d57d83ec3e705345f23569b",
+  "version": "1.2.2-1",
+  "package_sha256": "187626611ab5aa1658bd5b0195d13f3d67d57d745b65d199f9b802b9ff25fce9",
+  "source_manifest_sha256": "bf474a617866664f03fcdb64ac7532150f99139fd4ca844798d1f46e48f76141",
   "source": "https://github.com/0chium/AdvancedBrightnessSlider-Continued",
   "support": "https://github.com/0chium/AdvancedBrightnessSlider-Continued/issues",
   "license": "GPL-3.0",
   "original_author": "Jonas Schiefner",
   "maintainer": "0chium",
-  "validation": "Owner-reported implementation success on 17.0/21A329 and 18.3.2/22D82; prior candidate migration preserved threshold. Final presentation rebuild not device-tested. 18.2 runtime untested; 26.0.1 planned/unsupported. Auto-Brightness suppression not independently verified."
+  "validation": "Owner-reported implementation success on 17.0/21A329 and 18.3.2/22D82; prior candidate migration preserved threshold. Final presentation rebuild not device-tested. 18.2 runtime untested; 26.0.1 planned/unsupported. Auto-Brightness suppression not independently verified.",
+  "release_type": "metadata-only; installed payload unchanged",
+  "previous_version": "1.2.1+0chium.1",
+  "previous_package_sha256": "0c3e82842758ac54400502c55bdb364face35308fda3d9a901347e7b3c8f2d81",
+  "data_archive_sha256": "f62f317e421e93393d467b8efe928d8eee44c7dd79973bb1bccbd510a0244ae3",
+  "payload_source_commit": "534763abbc10ea858a69353a332d058381f4d897"
 }

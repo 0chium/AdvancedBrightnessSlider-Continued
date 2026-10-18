@@ -1,13 +1,22 @@
 # AdvancedBrightnessSlider Continued
 
 An independently maintained compatibility fork of **Jonas Schiefner's
-AdvancedBrightnessSlider**, maintained by **0chium**. Version **1.2.1+0chium.1**.
+AdvancedBrightnessSlider**, maintained by **0chium**. Version **1.2.2-1**.
 
 Uses Apple's existing Control Center brightness slider. Above the configured
 threshold it adjusts ordinary brightness. Below the threshold, ordinary
 brightness stays at minimum while Apple's native Reduce White Point supplies
 extra dimming. Existing preferences and the Auto-Brightness implementation are
 retained. Auto-Brightness suppression effectiveness is not independently verified.
+
+## Metadata-only version update
+
+Version 1.2.2-1 is a Debian version upgrade from 1.2.1+0chium.1. Only package
+control/release metadata changed. The complete installed payload, including
+executables, signatures, preferences and packaged notices, is byte-identical
+to the accepted public release. Packaged attribution therefore retains its
+original payload-version heading. No compilation or compatibility expansion
+was performed; all evidence and limitations below remain unchanged.
 
 ## Source, support and installation
 

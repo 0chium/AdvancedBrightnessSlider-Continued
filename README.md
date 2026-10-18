@@ -1,22 +1,18 @@
 # AdvancedBrightnessSlider Continued
 
+**Go beyond minimum brightness.**
+
+Adjust brightness and extra dimming with the same Control Center slider. Above
+your chosen threshold, it controls normal brightness. Below it, Apple's native
+Reduce White Point dims the screen further while brightness stays at minimum.
+
+Start with the default 30% split, or open **AdvancedBrightnessSlider Continued**
+in Settings and adjust **Threshold**. Threshold changes apply automatically.
+The Settings pane requires **PreferenceLoader** and **Cephei Tweak Support**.
+
 An independently maintained compatibility fork of **Jonas Schiefner's
-AdvancedBrightnessSlider**, maintained by **0chium**. Version **1.2.2-1**.
-
-Uses Apple's existing Control Center brightness slider. Above the configured
-threshold it adjusts ordinary brightness. Below the threshold, ordinary
-brightness stays at minimum while Apple's native Reduce White Point supplies
-extra dimming. Existing preferences and the Auto-Brightness implementation are
-retained. Auto-Brightness suppression effectiveness is not independently verified.
-
-## Metadata-only version update
-
-Version 1.2.2-1 is a Debian version upgrade from 1.2.1+0chium.1. Only package
-control/release metadata changed. The complete installed payload, including
-executables, signatures, preferences and packaged notices, is byte-identical
-to the accepted public release. Packaged attribution therefore retains its
-original payload-version heading. No compilation or compatibility expansion
-was performed; all evidence and limitations below remain unchanged.
+AdvancedBrightnessSlider**, maintained by **0chium**. Free and GPL-3.0 licensed.
+Version **1.2.2-1**.
 
 ## Source, support and installation
 
@@ -27,10 +23,9 @@ was performed; all evidence and limitations below remain unchanged.
 - [Original project and author](https://github.com/jschiefner/advanced-brightness-slider-tweak)
 - [Support the original developer](https://paypal.me/JonasSchiefner)
 
-Add `https://0chium.github.io/` to Sileo and select AdvancedBrightnessSlider
-Continued. Review the replacement transaction before confirming. This package
-conflicts with and replaces `com.jschiefner.advancedbrightnessslider`, including
-the earlier diagnostics under that identity. Do not force co-installation.
+Add `https://0chium.github.io/` to Sileo and install **AdvancedBrightnessSlider
+Continued**. It replaces the original AdvancedBrightnessSlider package and
+retains existing preferences. Let Sileo handle the replacement.
 
 The PayPal destination above is Jonas Schiefner's original destination. It is
 not a donation to 0chium, and no upstream endorsement is implied.
@@ -74,6 +69,15 @@ Controlled disablement conditionally restores borrowed White Point and
 Auto-Brightness settings while ownership remains uncontested. Startup brightness
 is not restored. Crash, SpringBoard restart or removal cannot guarantee cleanup;
 system settings may remain changed. No persistence daemon or polling is added.
+
+## Metadata-only version update
+
+Version 1.2.2-1 is a Debian version upgrade from 1.2.1+0chium.1. Only package
+control/release metadata changed. The complete installed payload, including
+executables, signatures, preferences and packaged notices, is byte-identical
+to the accepted public release. Packaged attribution therefore retains its
+original payload-version heading. No compilation or compatibility expansion
+was performed; all evidence and limitations below remain unchanged.
 
 ## Implementation and credits
 

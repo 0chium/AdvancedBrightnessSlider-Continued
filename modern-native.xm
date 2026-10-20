@@ -1,4 +1,4 @@
-// Adapter for AdvancedBrightnessSlider by Jonas Schiefner; experimental iOS 26.0.1 admission.
+// Adapter for AdvancedBrightnessSlider by Jonas Schiefner; iOS/iPadOS 17–26 admission.
 // GPL-3.0; preserve the original attribution and API credits in README.md/ABSManager.xm.
 #import <UIKit/UIKit.h>
 #import <Cephei/HBPreferences.h>
@@ -38,21 +38,11 @@
 
 static BOOL modernUsesRenderingMode;
 
-// Inspected builds plus owner-authorized 26.0.1 experiment. No runtime offsets.
+// Allow community testing across iOS/iPadOS 17 through 26. Interface guards remain below.
 static BOOL supportedBuild(void) {
     NSOperatingSystemVersion os = NSProcessInfo.processInfo.operatingSystemVersion;
-    char build[32] = {0};
-    size_t length = sizeof(build);
-    if (sysctlbyname("kern.osversion", build, &length, NULL, 0) != 0
-        || length == 0 || length > sizeof(build) || build[length - 1] != '\0') return NO;
-    NSString *version = [NSString stringWithUTF8String:build];
-    BOOL inspected18 = os.majorVersion == 18
-        && ((os.minorVersion == 2 && os.patchVersion == 0 && [version isEqualToString:@"22C152"])
-            || (os.minorVersion == 3 && os.patchVersion == 2 && [version isEqualToString:@"22D82"]));
-    BOOL experimental26 = os.majorVersion == 26 && os.minorVersion == 0 && os.patchVersion == 1;
-    modernUsesRenderingMode = inspected18 || experimental26;
-    return modernUsesRenderingMode || (os.majorVersion == 17 && os.minorVersion == 0 && os.patchVersion == 0
-        && [version isEqualToString:@"21A329"]);
+    modernUsesRenderingMode = os.majorVersion >= 18;
+    return os.majorVersion >= 17 && os.majorVersion <= 26;
 }
 
 static BOOL realController(CCUIDisplayModuleViewController *controller) {

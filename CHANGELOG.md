@@ -1,5 +1,17 @@
 # Changes from AdvancedBrightnessSlider 1.2.1
 
+## 1.2.4-1
+
+- Removes the modern exact-build allowlist. All minor and patch versions within
+  iOS/iPadOS 17–26 may initialize when the existing native interfaces are present.
+- Retains selector prerequisites and rendering/preview checks. iOS 17 uses its
+  existing path; iOS 18 and later use the existing rendering-mode check.
+- Keeps mapping, native transactions, preference storage, restoration behavior,
+  original author/GPL credits and rootless packaging unchanged.
+- No Dopamine-only restriction. Rootful or RootHide conversion is not implied.
+- This new build is not device-tested. Earlier owner reports and the external
+  iPad 9 / 17.0 report are distinct from compatibility on untested versions.
+
 ## 1.2.3-1
 
 - Enables exactly iOS 26.0.1 with the existing controller adapter, rendering

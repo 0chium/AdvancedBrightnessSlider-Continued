@@ -1,5 +1,17 @@
 # Identified release build inputs
 
+## 1.2.4-1 broad-admission build
+
+The admission change is compiled with the same pinned macOS-15 / Xcode 16.4,
+Theos, SDK and signing inputs below. Build revision:
+`aa347041a13f34787d662ff5d1bcceba2093820e`.
+
+The existing private workflow builds and verifies the packaged arm64 and arm64e
+slices. Public source contains the changed adapter and control file, with the
+remaining implementation files unchanged. Build checks establish package
+integrity, not compatibility on untested devices. No new local Windows toolchain
+or phone-file acquisition was required.
+
 ## 1.2.3-1 packaging from the owner-tested iOS 26 adapter
 
 The 1.2.3-1 release reuses the data archive from the successful private build

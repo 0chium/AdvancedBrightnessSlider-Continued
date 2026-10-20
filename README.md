@@ -12,7 +12,7 @@ The Settings pane requires **PreferenceLoader** and **Cephei Tweak Support**.
 
 An independently maintained compatibility fork of **Jonas Schiefner's
 AdvancedBrightnessSlider**, maintained by **0chium**. Free and GPL-3.0 licensed.
-Version **1.2.3-1**.
+Version **1.2.4-1**.
 
 ## Source, support and installation
 
@@ -32,6 +32,8 @@ not a donation to 0chium, and no upstream endorsement is implied.
 
 ## Build-specific compatibility
 
+Available to try on iOS/iPadOS 17 through 26 with a compatible rootless jailbreak. No Dopamine-only requirement. Tested configurations are listed separately; other combinations need testing.
+
 | Device | Exact version/build | Evidence |
 | --- | --- | --- |
 | iPhone 14 Pro | 17.0 / 21A329 | Owner reports working mapping and threshold preferences. |
@@ -39,17 +41,24 @@ not a donation to 0chium, and no upstream endorsement is implied.
 | iPhone SE 2 | 18.2 / 22C152 | Statically investigated and admitted by the guard; runtime untested for this update. |
 | iPhone SE (2nd generation) | 26.0.1 / 23A355 | Owner reports working brightness mapping with 1.2.2-1+abs26exp.1. The 1.2.3-1 release reuses its complete installed payload unchanged. |
 
-These are specific owner reports, not comprehensive compatibility certification
-or blanket support for iOS 17, 18 or 26. Other modern builds, including other
-iOS 26 versions, are not enabled. The legacy
-iOS 16 path is retained, but the owner's working original installation does not
-validate this rebuilt package there. Modern Prysm/BigSurCenter support is not
-claimed.
+Version 1.2.4-1 removes the exact-build allowlist across iOS/iPadOS 17–26.
+It retains the native interface and preview checks. The legacy iOS 16 path is
+unchanged and untested in the rebuilt continued release. Modern Prysm/BigSurCenter
+support is not claimed. The package is rootless; removing OS locks does not
+convert it for rootful or RootHide environments.
+
+A community tester reports an iPad (9th generation) working on iPadOS 17.0 with
+Dopamine and an A10X iPad not working on 17.7.8 with palera1n. Exact installed
+package versions and build numbers were not supplied. The old guard excluded
+17.7.8; whether 1.2.4-1 works there remains unverified. The reports do not isolate
+the jailbreak as the cause.
 
 The iOS 17.0 and 18.3.2 reports used earlier candidates. The iOS 26.0.1 report
 used 1.2.2-1+abs26exp.1; public 1.2.3-1 reuses that package's complete installed
 payload without recompiling. Only its package Version and Description changed.
-The new package container has not received a separate device installation test.
+The 1.2.3-1 package container was not separately device-tested. Version 1.2.4-1
+rebuilds the admission change; this new build has not received device testing.
+Earlier functional reports are preserved as evidence of those configurations.
 
 On iOS 26.0.1, the Threshold slider's numeric value is not visible in Settings.
 Preview isolation has not received a separate focused device test on that OS;
@@ -76,7 +85,16 @@ Auto-Brightness settings while ownership remains uncontested. Startup brightness
 is not restored. Crash, SpringBoard restart or removal cannot guarantee cleanup;
 system settings may remain changed. No persistence daemon or polling is added.
 
-## iOS 26.0.1 update
+## Broad version admission
+
+Version 1.2.4-1 allows every minor and patch version within iOS/iPadOS 17–26.
+It uses the existing iOS 17 path for the 17.x family and the existing rendering
+mode check for 18 and later. Native selector prerequisites, preview isolation,
+brightness mapping, transaction cleanup and settings ownership remain in place.
+There is no jailbreak-brand check. Functional compatibility on untested releases
+is not guaranteed; successful and unsuccessful reports are welcome.
+
+## Earlier iOS 26.0.1 update
 
 Version 1.2.3-1 adds exact iOS 26.0.1 admission and applies the existing rendering
 selector prerequisite and preview check to that path. It retains Apple's native

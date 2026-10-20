@@ -1,4 +1,4 @@
-// Private iOS 17.0 / 18.2 / 18.3.2 adapter for AdvancedBrightnessSlider by Jonas Schiefner.
+// Adapter for AdvancedBrightnessSlider by Jonas Schiefner; experimental iOS 26.0.1 admission.
 // GPL-3.0; preserve the original attribution and API credits in README.md/ABSManager.xm.
 #import <UIKit/UIKit.h>
 #import <Cephei/HBPreferences.h>
@@ -36,9 +36,9 @@
                brightnessDidChange:(float)brightness;
 @end
 
-static BOOL modernIs18;
+static BOOL modernUsesRenderingMode;
 
-// Scope deliberately matches the inspected builds. No runtime offsets.
+// Inspected builds plus owner-authorized 26.0.1 experiment. No runtime offsets.
 static BOOL supportedBuild(void) {
     NSOperatingSystemVersion os = NSProcessInfo.processInfo.operatingSystemVersion;
     char build[32] = {0};
@@ -46,15 +46,18 @@ static BOOL supportedBuild(void) {
     if (sysctlbyname("kern.osversion", build, &length, NULL, 0) != 0
         || length == 0 || length > sizeof(build) || build[length - 1] != '\0') return NO;
     NSString *version = [NSString stringWithUTF8String:build];
-    modernIs18 = os.majorVersion == 18
+    BOOL inspected18 = os.majorVersion == 18
         && ((os.minorVersion == 2 && os.patchVersion == 0 && [version isEqualToString:@"22C152"])
             || (os.minorVersion == 3 && os.patchVersion == 2 && [version isEqualToString:@"22D82"]));
-    return modernIs18 || (os.majorVersion == 17 && os.minorVersion == 0 && os.patchVersion == 0
+    BOOL experimental26 = os.majorVersion == 26 && os.minorVersion == 0 && os.patchVersion == 1;
+    modernUsesRenderingMode = inspected18 || experimental26;
+    return modernUsesRenderingMode || (os.majorVersion == 17 && os.minorVersion == 0 && os.patchVersion == 0
         && [version isEqualToString:@"21A329"]);
 }
 
 static BOOL realController(CCUIDisplayModuleViewController *controller) {
-    return !modernIs18 || controller.contentRenderingMode == 0;
+    // Mode 0 means real on inspected iOS 18; this interpretation is unverified on 26.0.1.
+    return !modernUsesRenderingMode || controller.contentRenderingMode == 0;
 }
 
 typedef struct {
@@ -369,7 +372,7 @@ extern "C" void initModernNative(HBPreferences *preferences) {
                             @"_sliderEditingDidBegin:", @"_sliderEditingDidEnd:",
                             @"currentBrightness", @"sliderView", @"delegate"])
         if (!class_getInstanceMethod(controller, NSSelectorFromString(name))) return;
-    if (modernIs18 && !class_getInstanceMethod(controller, @selector(contentRenderingMode))) return;
+    if (modernUsesRenderingMode && !class_getInstanceMethod(controller, @selector(contentRenderingMode))) return;
     Class settingsClass = NSClassFromString(@"AXSettings");
     if (![settingsClass respondsToSelector:@selector(sharedInstance)]) return;
     AXSettings *settings = [settingsClass sharedInstance];

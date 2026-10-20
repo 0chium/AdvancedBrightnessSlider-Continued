@@ -1,8 +1,8 @@
 Package: com.ochium.advancedbrightnessslider
 Name: AdvancedBrightnessSlider Continued
-Version: 1.2.2-1
+Version: 1.2.3-1
 Architecture: iphoneos-arm
-Description: Independently maintained compatibility fork of Jonas Schiefner's AdvancedBrightnessSlider
+Description: Go beyond minimum brightness.
 Maintainer: 0chium
 Author: Jonas Schiefner
 Section: Tweaks

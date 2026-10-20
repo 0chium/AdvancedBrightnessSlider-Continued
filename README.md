@@ -12,7 +12,7 @@ The Settings pane requires **PreferenceLoader** and **Cephei Tweak Support**.
 
 An independently maintained compatibility fork of **Jonas Schiefner's
 AdvancedBrightnessSlider**, maintained by **0chium**. Free and GPL-3.0 licensed.
-Version **1.2.2-1**.
+Version **1.2.3-1**.
 
 ## Source, support and installation
 
@@ -37,21 +37,27 @@ not a donation to 0chium, and no upstream endorsement is implied.
 | iPhone 14 Pro | 17.0 / 21A329 | Owner reports working mapping and threshold preferences. |
 | iPhone 11 Pro Max | 18.3.2 / 22D82 | Owner reports functional success and successful Sileo replacement of the old package, with the threshold preserved. |
 | iPhone SE 2 | 18.2 / 22C152 | Statically investigated and admitted by the guard; runtime untested for this update. |
-| Planned iPhone SE | 26.0.1 | Planned, untested and unsupported by the current guards. |
+| iPhone SE (2nd generation) | 26.0.1 / 23A355 | Owner reports working brightness mapping with 1.2.2-1+abs26exp.1. The 1.2.3-1 release reuses its complete installed payload unchanged. |
 
 These are specific owner reports, not comprehensive compatibility certification
-or blanket support for iOS 17/18. Other modern builds are not enabled. The legacy
+or blanket support for iOS 17, 18 or 26. Other modern builds, including other
+iOS 26 versions, are not enabled. The legacy
 iOS 16 path is retained, but the owner's working original installation does not
 validate this rebuilt package there. Modern Prysm/BigSurCenter support is not
 claimed.
 
-The release preparation changes public links and attribution after the tested
-candidate; it does not change mapping, state management or exact-build guards.
-The final presentation rebuild has not been installed. Native service application
-of Auto-Brightness suppression remains unverified; a preference readback alone
+The iOS 17.0 and 18.3.2 reports used earlier candidates. The iOS 26.0.1 report
+used 1.2.2-1+abs26exp.1; public 1.2.3-1 reuses that package's complete installed
+payload without recompiling. Only its package Version and Description changed.
+The new package container has not received a separate device installation test.
+
+On iOS 26.0.1, the Threshold slider's numeric value is not visible in Settings.
+Preview isolation has not received a separate focused device test on that OS;
+the existing rendering check remains enabled. Native service application of
+Auto-Brightness suppression remains unverified; a preference readback alone
 does not establish service behavior. Accessibility White Point changes may
 affect the screen without repositioning Control Center, as accepted in private
-testing. Report observations without repeatedly provoking a failure.
+testing.
 
 ## Preferences and state
 
@@ -70,7 +76,19 @@ Auto-Brightness settings while ownership remains uncontested. Startup brightness
 is not restored. Crash, SpringBoard restart or removal cannot guarantee cleanup;
 system settings may remain changed. No persistence daemon or polling is added.
 
-## Metadata-only version update
+## iOS 26.0.1 update
+
+Version 1.2.3-1 adds exact iOS 26.0.1 admission and applies the existing rendering
+selector prerequisite and preview check to that path. It retains Apple's native
+interaction and brightness transactions, existing mapping, preference storage,
+restoration behavior and iOS 16/17/18 paths. No polling or new dependency is added.
+
+The release reuses the complete installed data archive from the owner-tested
+1.2.2-1+abs26exp.1 package. Both signed binaries and every installed resource are
+byte-identical to that package. A metadata repack gives it the public version
+1.2.3-1, which upgrades both the previous public and experimental versions.
+
+## Earlier metadata-only version update
 
 Version 1.2.2-1 is a Debian version upgrade from 1.2.1+0chium.1. Only package
 control/release metadata changed. The complete installed payload, including

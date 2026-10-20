@@ -1,5 +1,27 @@
 # Identified release build inputs
 
+## 1.2.3-1 packaging from the owner-tested iOS 26 adapter
+
+The 1.2.3-1 release reuses the data archive from the successful private build
+at source revision `0c392af4f5b4e0b5a67e80f78c662d31a716f848`.
+That payload used the pinned macOS/Theos/SDK inputs described below, with
+`PACKAGE_VERSION=1.2.2-1+abs26exp.1`. Its implementation files match this public
+source snapshot, including the iOS 26.0.1 admission in `modern-native.xm`.
+Private build history and connection material are not part of the public source.
+
+Tested input package SHA-256:
+`4cf23b7cf49e14cf28467c36ad0271328d0b833be586062ca8918886602c4894`.
+
+The release changes only the control Version to 1.2.3-1 and Description to
+"Go beyond minimum brightness." The data archive and other Debian archive
+members are reused verbatim, preserving every installed file, signature and
+resource. No compiler or linker ran for this repack. Debian version comparison
+confirms an upgrade from both 1.2.2-1 and 1.2.2-1+abs26exp.1.
+
+The owner reports the input package working on iPhone SE (2nd generation),
+iOS 26.0.1 (23A355). This does not establish other iOS 26 versions or a separate
+installation test of the repacked container. See README for remaining limits.
+
 ## 1.2.2-1 metadata packaging
 
 The published 1.2.2-1 package was not compiled. Its control archive changes only

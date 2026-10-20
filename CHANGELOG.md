@@ -1,5 +1,19 @@
 # Changes from AdvancedBrightnessSlider 1.2.1
 
+## 1.2.3-1
+
+- Enables exactly iOS 26.0.1 with the existing controller adapter, rendering
+  selector prerequisite and preview guard. Other iOS 26 versions are not enabled.
+- Owner reports working mapping on iPhone SE (2nd generation), iOS 26.0.1
+  (23A355), using 1.2.2-1+abs26exp.1. Settings does not show the Threshold
+  slider's numeric value. Preview isolation has not been separately tested.
+- Reuses that tested package's data archive verbatim. No recompilation;
+  binaries, signatures and installed resources are unchanged. Only the package
+  Version and Description fields change. The new container is not separately
+  device-tested.
+- Preserves Jonas Schiefner's authorship, GPL-3.0, upstream credits, preference
+  storage, dependencies, replacement metadata and earlier OS paths.
+
 ## 1.2.2-1
 
 - Metadata-only Debian version update from 1.2.1+0chium.1; dpkg confirms the
@@ -43,6 +57,7 @@ Evidence: owner-reported mapping/threshold success on iPhone 14 Pro / 17.0 /
 21A329; owner-reported functional and Sileo migration success on iPhone 11 Pro
 Max / 18.3.2 / 22D82 with the threshold preserved. Static inspection supports
 the scoped adapter contracts; a successful build/signature check is not a
-runtime result. SE 2 / 18.2 remains runtime untested; SE / 26.0.1 remains planned
-and unsupported. No blanket iOS 17/18 support or verified Auto-Brightness
-suppression is claimed. Final presentation changes have not been installed.
+runtime result. SE 2 / 18.2 remains runtime untested. The iOS 26.0.1 result is recorded under
+1.2.3-1 above. No blanket iOS support or independently verified Auto-Brightness
+suppression is claimed. Earlier presentation-only rebuilds were not separately
+installed during the original iOS 17/18 tests.
